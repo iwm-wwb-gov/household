@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iWMS Withdraw</title>
+  <link rel="icon" href="https://iwms.wbb.gov.lk/favicon.ico">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      background-color: #ffffff;
+    }
+
+    .center-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 80px); /* considering nav height */
+      padding-top: 30px;
+    }
+
+    .loader-card, .success-card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 40px 30px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      display: none;
+    }
+
+    .success-icon {
+      font-size: 60px;
+      color: #28a745;
+      margin-bottom: 20px;
+    }
+
+    .message-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .message-detail {
+      font-size: 1rem;
+      color: #666;
+      margin-top: 10px;
+    }
+
+    .btn-home {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body class="bg-white">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm header" id="header">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="https://iwms.wbb.gov.lk/">
+        <span class="me-2"><img style="width: 35px;" src="https://iwms.wbb.gov.lk/images/logo.png" alt=""></span>
+        <span class="fs-5 fw-bolder">IWMS System</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <form id="query-form" method="POST" action="https://iwms.wbb.gov.lk/change-local">
+            <input type="hidden" name="_token" value="CSRF-TOKEN-HERE">
+            <li class="nav-item dropdown">
+              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                <b>En</b>
+              </a>
+            </li>
+          </form>
+          <li class="nav-item"><a class="nav-link" href="https://iwms.wbb.gov.lk/login">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://iwms.wbb.gov.lk/register">Register</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content Container -->
+  <div class="center-container">
+    <!-- Loader -->
+    <div class="loader-card" id="loader">
+      <img src="loadex.gif" alt="Loading..." width="80" height="80" class="mb-3">
+      <p class="fs-5 fw-semibold">Processing Payment...</p>
+    </div>
+
+    <!-- Success -->
+    <div class="success-card" id="success">
+      <div class="success-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <div class="message-title">
+        Transfer Successful
+      </div>
+      <div class="message-detail">
+        The amount has been successfully transferred to your bank account.
+      </div>
+      <div class="btn-home">
+        <a href="https://iwms.wbb.gov.lk/household/search" class="btn btn-outline-success">Back to Home</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Show loader on load
+    window.onload = function () {
+      document.getElementById("loader").style.display = "block";
+
+      setTimeout(function () {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("success").style.display = "block";
+      }, 10000); // 10 seconds
+    }
+  </script>
+</body>
+</html>

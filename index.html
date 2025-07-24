@@ -1,0 +1,242 @@
+﻿<!DOCTYPE html><html lang="en"><script data-savepage-type="" type="text/plain" data-savepage-src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/content/location/location.js" id="eppiocemhmnlbhjplcgkofciiegomcon"></script><script data-savepage-type="" type="text/plain" data-savepage-src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/extend-native-history-api.js"></script><script data-savepage-type="" type="text/plain" data-savepage-src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/requests.js"></script><head>
+<link rel="icon" data-savepage-href="https://iwms.wbb.gov.lk/favicon.ico" href="data:image/vnd.microsoft.icon;base64,">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="SA4fLm7LLif335Rhq1GB85reS6jObJ5hMl2mpppQ">
+
+    <title>iWMS</title>
+
+    <script data-savepage-type="text/javascript" type="text/plain" data-savepage-src="https://iwms.wbb.gov.lk//DataTables/datatables.min.js"></script>
+    <script data-savepage-type="text/javascript" type="text/plain" data-savepage-src="https://iwms.wbb.gov.lk//js/nav.js"></script>
+   
+    <!-- Fonts -->
+    <link rel="dns-prefetch" data-savepage-href="//fonts.gstatic.com" href="">
+
+ 	<link rel="stylesheet" href="CSS/style.css">
+
+<meta name="savepage-url" content="https://iwms.wbb.gov.lk/household/search">
+<meta name="savepage-title" content="iWMS">
+<meta name="savepage-pubdate" content="Unknown">
+<meta name="savepage-from" content="https://iwms.wbb.gov.lk/household/search">
+<meta name="savepage-date" content="Sun Jun 22 2025 09:01:51 GMT+0530 (India Standard Time)">
+<meta name="savepage-state" content="Standard Items; Retain cross-origin frames; Merge CSS images; Remove unsaved URLs; Load lazy images in existing content; Max frame depth = 5; Max resource size = 50MB; Max resource time = 10s;">
+<meta name="savepage-version" content="33.9">
+<meta name="savepage-comments" content="">
+  </head>
+
+<body class="bg-white" __processed_d7272cf3-b162-410f-b477-a57e02907451__="true">
+    <div id="app">
+
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm header" id="header">
+        <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" data-savepage-href="https://iwms.wbb.gov.lk" href="https://iwms.wbb.gov.lk/">
+            <span class="me-2"><img style="width: 35px;" src="https://iwms.wbb.gov.lk/images/logo.png" alt=""></span>
+            <span class="fs-5 fw-bolder">IWMS System</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" onclick="threebar()"></span>
+        </button>
+
+        <div class="navbar-collapse collapse show" id="Showme" style="display: none;">
+            <!-- Left Side Of Navbar -->
+            <ul class="navbar-nav me-auto">
+
+            </ul>
+
+
+            <!-- Right Side Of Navbar -->
+            <ul class="navbar-nav ms-auto">
+
+                
+                
+                <!-- Authentication Links -->
+            <form id="query-form" data-parsley-validate="" method="POST" action="https://iwms.wbb.gov.lk/change-local">
+    			<input type="hidden" name="_token" value="SA4fLm7LLif335Rhq1GB85reS6jObJ5hMl2mpppQ">    <li class="nav-item dropdown">
+        		<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre="">
+            	<b>En</b>  
+        		</a>
+
+			</form>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://iwms.wbb.gov.lk/login">Login</a>
+                        </li>
+                    
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://iwms.wbb.gov.lk/register">Register</a>
+                        </li>
+                                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="https://iwms.wbb.gov.lk/appeal-against">Submit Appeal Against Appeal</a>
+                        </li> -->
+            </ul>
+
+        </div>
+
+
+
+
+<script type="text/javascript">
+	function threebar() {
+  var x = document.getElementById("Showme");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+    </div>
+</nav>
+
+        
+        <main class="ease" id="body-pd">
+
+                      
+                        
+                        
+            
+    <style>
+        td.hs-section {
+            background: #bdb9b9;
+            color: #000 !important;
+            text-align: center;
+            font-weight: bolder;
+        }
+
+        .tag {
+            padding: 3px 5px;
+            border-radius: 4px;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        .identity_type {
+            background-color: #0639a8;
+            color: #fff;
+        }
+    </style>
+
+    <div class="p-4 ps-0" id="view-household-info">
+        <p class="h3 mt-1 fw-normal text-left mb-4">
+            Social Register - 2022
+        </p>
+        <p class="h4 mt-1 fw-normal text-left mb-4 border-bottom pb-2">
+            Payment Process
+        </p>
+
+
+        <div class="container-fluid pl-1 pr-1">
+                <input type="hidden" name="_token" value="SA4fLm7LLif335Rhq1GB85reS6jObJ5hMl2mpppQ">                <div class="row">
+                    <div class="col-lg-3 col-md-4">
+                        <select class="form-select" aria-label="type" id="type" name="type" tabindex="1">
+                            <option selected="" value="nic">Applicant/Member NIC</option>
+                            <option value="ref">Application Reference/ HH No</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="searchInput"name="search" data-parsley-required="true" data-parsley-maxlength="255" data-parsley-trigger="input" tabindex="1" value="">
+                    </div>
+                    <div class="col-md-4">
+                        <button type="submit" name="action" value="search" class="btn btn-primary" onclick="search()">Search Registry
+                        </button>
+                    </div>
+                </div>
+            <div class="container">
+                <div class="row dataset  mt-5">
+
+                    <div class="col-12">
+                                            </div>
+
+                    <div class="col-sm-12 col-md-8 col-lg-8">
+                                            </div>
+
+                                    </div>
+
+
+                <div class="row dataset  mt-5">
+                                    </div>
+
+            </div>
+
+            
+            <div class="container">
+                <div class="row dataset  mt-5">
+                    <div class="col-12">
+                                            </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="assignCommittee" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Select the Committee</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table id="tableCommittee" class="table table-hover" style="width:100%">
+                        <thead>
+                            <tr class="table-primary">
+                                <th>Committee No</th>
+                                <th>Committee Name</th>
+                                <th>GN Division</th>
+                                <th>Committee Head</th>
+                                <th>Member 1</th>
+                                <th>Select</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td colspan="6">No committees data found.</td>
+                                </tr>
+                                                    </tbody>                               
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-assign-person">Assign</button>
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    
+            </main>
+    </div>
+
+    <div id="loading-spinner">
+        <div class="cv-spinner">
+            <span class="spinner"></span>
+        </div>
+    </div>
+
+    <script data-savepage-type="" type="text/plain"></script>
+<script>
+function search() {
+  var input = document.getElementById("searchInput").value.trim();
+
+  // Regular expressions for NIC formats:
+  const newNICRegex = /^\d{12}$/;          // Example: 200330600640
+  const oldNICRegex = /^\d{9}[vVxX]$/;     // Example: 757072467V or 757072467X
+
+  // Check if input matches either format
+  if (newNICRegex.test(input) || oldNICRegex.test(input)) {
+    window.location.href = "page2.html?query=" + encodeURIComponent(input);
+  } else {
+    alert("Invalid NIC number. Please enter a valid NIC (e.g., 200330600640 or 757072467V).");
+  }
+}
+</script>
+
+
+<script data-savepage-type="" type="text/plain" async="" data-savepage-src="https://www.googletagmanager.com/gtag/js?id=G-YKCT7E9JBH"></script>
+<script data-savepage-type="" type="text/plain"></script>
+
+
+</body></html>

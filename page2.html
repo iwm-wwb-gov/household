@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iWMS</title>
+  <link rel="icon" href="https://iwms.wbb.gov.lk/favicon.ico">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+  <style>
+    td.hs-section {
+      background: #bdb9b9;
+      color: #000 !important;
+      text-align: center;
+      font-weight: bolder;
+    }
+
+    .tag {
+      padding: 3px 5px;
+      border-radius: 4px;
+      margin-right: 10px;
+      font-size: 14px;
+    }
+
+    .identity_type {
+      background-color: #0639a8;
+      color: #fff;
+    }
+    .custom-table {
+      background-color: #eeeeee; /* light grey background */
+    }
+
+    .custom-table th{
+        color: black;
+        background: #eeeeee;
+    }
+    .custom-table td {
+      background-color: #eeeeee !important;
+      color: #212529;
+    }
+
+  </style>
+</head>
+
+<body class="bg-white">
+
+  <div id="app">
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm header" id="header">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="https://iwms.wbb.gov.lk/">
+          <span class="me-2"><img style="width: 35px;" src="https://iwms.wbb.gov.lk/images/logo.png" alt=""></span>
+          <span class="fs-5 fw-bolder">IWMS System</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" onclick="threebar()"></span>
+        </button>
+
+        <div class="navbar-collapse collapse show" id="Showme" style="display: none;">
+          <ul class="navbar-nav ms-auto">
+            <form id="query-form" method="POST" action="https://iwms.wbb.gov.lk/change-local">
+              <input type="hidden" name="_token" value="CSRF-TOKEN-HERE">
+              <li class="nav-item dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <b>En</b>
+                </a>
+              </li>
+            </form>
+            <li class="nav-item"><a class="nav-link" href="https://iwms.wbb.gov.lk/login">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://iwms.wbb.gov.lk/register">Register</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="ease p-4" id="body-pd">
+      <div class="container">
+        <p class="h4 mt-1 fw-normal text-left mb-4 border-bottom pb-2">Payment Detail</p>
+
+        <!-- Begin Applicant Details Card -->
+        <div class="container bg-white p-4 rounded shadow-sm border">
+          <h5 class="mb-4">Applicant Information</h5>
+          <div class="row mb-3">
+            <div class="col-md-4"><strong>Applicants Identity:</strong> <span id="result" class="text-dark"></span></div>
+</div>
+
+          <div class="row mb-3">  
+            <div class="col-md-4"><strong>District/ DS Division:</strong> All </div>
+            <div class="col-md-4"><strong>Application Reference:</strong> 1-3-03-02-050-00361 <span class="badge bg-primary">CYCLE-1</span></div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-4"><strong>Household Reference:</strong> HH-1-3-03-02-050-00361</div>
+            <div class="col-md-4"><strong>Contact No:</strong> 775280337</div>
+          </div>
+          <div class="row mb-3">
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-4"><strong>Selected Category:</strong> Vulnerable</div>
+            <div class="col-md-4"><strong>Appeals:</strong> N/A</div>
+            <div class="col-md-4"><strong>Objections:</strong> N/A</div>
+          </div>
+          <div class="row mb-4">
+            <div class="col-md-4"><strong>Bank Account status:</strong> <span class="text-success"><i class="fa fa-check-circle text-success"></i> Verified
+</span></div>
+            <div class="col-md-4"><strong>Payable Status:</strong> <i class="fa fa-check-circle text-success"></i> Verified
+</span></div></div>
+          </div>
+
+          <h6 class="mb-3">Payment Information</h6>
+          <div class="table-responsive">
+            <table class="table text-center custom-table">
+              <thead class="table-light">
+                <tr>
+                  <th>Period</th>
+                  <th>Batch</th>
+                  <th>Amount (Rs.)</th>
+                  <th>Status</th>
+                  <th>Value Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2024 - July Batch Group</td>
+                  <td>July Payment Batch 2</td>
+                  <td>5000.00</td>
+                  <td>Payment Process Started</td>
+                  <td>2025-09-06</td>
+                </tr>
+                <tr>
+                  <td>2025 - August Batch Group</td>
+                  <td>August Payment Batch 1</td>
+                  <td>5000.00</td>
+                  <td>Payment Process Started</td>
+                  <td>2025-10-29</td>
+                </tr>
+                <tr>
+                  <td>2025 - September Batch Group</td>
+                  <td>September Payment Batch 1</td>
+                  <td>5000.00</td>
+                  <td>Payment Process Started</td>
+                  <td>2025-11-20</td>
+                </tr>
+                <tr>
+                  <td>2025 - October Batch Group</td>
+                  <td>October Payment Batch 1</td>
+                  <td>5000.00</td>
+                  <td>Payment Process Started</td>
+                  <td>2025-12-15</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+<br>
+          <div class="col-md-4">
+                <a href="page3.html"><button type="submit" class="btn btn-primary" >Withdraw</button></a>
+        </div>
+
+        </div>
+        <!-- End Applicant Details Card -->
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Toggle navbar
+    function threebar() {
+      var x = document.getElementById("Showme");
+      x.style.display = (x.style.display === "none") ? "block" : "none";
+    }
+
+    // Display query param
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+    document.getElementById("result").textContent = getQueryParam("query");
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

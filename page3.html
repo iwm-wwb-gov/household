@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iWMS</title>
+  <link rel="icon" href="https://iwms.wbb.gov.lk/favicon.ico">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</head>
+  <style>
+    .payment-option {
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .payment-option.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+
+    .payment-option:hover:not(.disabled) {
+      background-color: #f1f1f1;
+    }
+  </style>
+
+<body class="bg-white">
+
+  <div id="app">
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm header" id="header">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="https://iwms.wbb.gov.lk/">
+          <span class="me-2"><img style="width: 35px;" src="https://iwms.wbb.gov.lk/images/logo.png" alt=""></span>
+          <span class="fs-5 fw-bolder">IWMS System</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" onclick="threebar()"></span>
+        </button>
+
+        <div class="navbar-collapse collapse show" id="Showme" style="display: none;">
+          <ul class="navbar-nav ms-auto">
+            <form id="query-form" method="POST" action="https://iwms.wbb.gov.lk/change-local">
+              <input type="hidden" name="_token" value="CSRF-TOKEN-HERE">
+              <li class="nav-item dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <b>En</b>
+                </a>
+              </li>
+            </form>
+            <li class="nav-item"><a class="nav-link" href="https://iwms.wbb.gov.lk/login">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://iwms.wbb.gov.lk/register">Register</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  <div class="container py-5">
+    <h4 class="mb-4">Choose Payment Method</h4>
+
+    <div class="row g-4">
+      <!-- Credit/Debit Card -->
+      <div class="col-md-6">
+        <a href="Payment/add-card.html" class="text-decoration-none text-dark">
+          <div class="payment-option">
+            <i class="fa fa-credit-card fa-2x mb-2"></i>
+            <h5>Add Credit or Debit Card</h5>
+            <p>Use your Visa, MasterCard</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Bank Transfer (Disabled) -->
+      <div class="col-md-6">
+        <div class="payment-option disabled">
+          <i class="fa fa-university fa-2x mb-2"></i>
+          <h5>Bank Transfer</h5>
+          <p>This option is currently unavailable</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script>
+    // Toggle navbar
+    function threebar() {
+      var x = document.getElementById("Showme");
+      x.style.display = (x.style.display === "none") ? "block" : "none";
+    }
+
+    // Display query param
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+    document.getElementById("result").textContent = getQueryParam("query");
+  </script>
+
+  <!-- FontAwesome and Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
